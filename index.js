@@ -27,6 +27,14 @@ async function pwdExample() {
   }
 }
 
+async function gradlewExecute(task) {
+  try {
+    const { stdout, stderr } = await exec(`./gradlew ${task}`);
+    console.log('stdout:', stdout);
+    console.log('stderr:', stderr);
+  } catch (e) {
+    console.error(e); // should contain code (exit code) and signal (that caused the termination).
+  }
 
 
 try {
@@ -40,9 +48,13 @@ try {
   
   var dirname = path.dirname(workingDirectory);
   fs.statSync(dirname);
+  console.log("process.cwd() = " + process.cwd());
   process.chdir(dirname);
+  console.log("process.cwd() = " + process.cwd());
   lsExample();
+  
   pwdExample();
+  gradlewExecute(task);
   //const { stdout, stderr } = (async () => { await exec(`./gradlew ${task}`); })()
   // const { stdout, stderr } = await exec(`./gradlew ${shadowjar}`);  
   //console.log(`stdout: ${stdout}`);
