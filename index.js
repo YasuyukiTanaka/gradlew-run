@@ -35,7 +35,7 @@ async function gradlewExecute(task) {
   } catch (e) {
     console.error(e); // should contain code (exit code) and signal (that caused the termination).
   }
-
+}
 
 try {
   // `task` input defined in action metadata file
