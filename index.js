@@ -52,7 +52,7 @@ try {
   // fs.statSync(workingDirectory);
   console.log("process.cwd() = " + process.cwd());
   process.chdir(dirname);
-  consloe.log(dirname);
+  console.log(dirname);
   console.log("process.cwd() = " + process.cwd());
   lsExample();
   
