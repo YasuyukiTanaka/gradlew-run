@@ -46,12 +46,12 @@ try {
   const workingDirectory = core.getInput('working-directory');
   console.log(`working-directory param is ${workingDirectory}!`);
  
-  var dirname = path.dirname(workingDirectory);
+  //var dirname = path.dirname(workingDirectory);
   //console.log(`dirname is ${dirname}`);
-  fs.statSync(dirname);
+  fs.statSync(workingDirectory);
   // fs.statSync(workingDirectory);
   console.log("process.cwd() = " + process.cwd());
-  process.chdir(dirname);
+  process.chdir(workingDirectory);
   console.log(dirname);
   console.log("process.cwd() = " + process.cwd());
   lsExample();
