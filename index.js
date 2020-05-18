@@ -47,11 +47,12 @@ try {
   console.log(`working-directory param is ${workingDirectory}!`);
  
   var dirname = path.dirname(workingDirectory);
-  console.log(`dirname is ${dirname}`);
+  //console.log(`dirname is ${dirname}`);
   fs.statSync(dirname);
-  fs.statSync(workingDirectory);
+  // fs.statSync(workingDirectory);
   console.log("process.cwd() = " + process.cwd());
   process.chdir(dirname);
+  consloe.log(dirname);
   console.log("process.cwd() = " + process.cwd());
   lsExample();
   
