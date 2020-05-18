@@ -45,9 +45,11 @@ try {
   // `working-directory` input defined in action metadata file
   const workingDirectory = core.getInput('working-directory');
   console.log(`working-directory param is ${workingDirectory}!`);
-  
+ 
   var dirname = path.dirname(workingDirectory);
+  console.log(`dirname is ${dirname}`);
   fs.statSync(dirname);
+  fs.statSync(workingDirectory);
   console.log("process.cwd() = " + process.cwd());
   process.chdir(dirname);
   console.log("process.cwd() = " + process.cwd());
