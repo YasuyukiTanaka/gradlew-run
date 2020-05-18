@@ -1,0 +1,17 @@
+name: 'gradlew execute'
+description: 'execute gradlew command'
+inputs:
+  task:
+    description: 'execute task'
+    required: false
+    default: 'shadowjar'
+  working-directory:
+    description: 'gradlew command execute directory'
+    required: false
+    default: .
+outputs:
+  time: # id of output
+    description: 'The time we we greeted you'
+runs:
+  using: 'node12'
+  main: 'index.js'
