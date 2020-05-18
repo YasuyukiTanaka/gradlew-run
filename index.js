@@ -43,10 +43,10 @@ try {
   process.chdir(dirname);
   lsExample();
   pwdExample();
-  const { stdout, stderr } = (async () => { await exec(`./gradlew ${task}`); })()
+  //const { stdout, stderr } = (async () => { await exec(`./gradlew ${task}`); })()
   // const { stdout, stderr } = await exec(`./gradlew ${shadowjar}`);  
-  console.log(`stdout: ${stdout}`);
-  console.log(`stderr: ${stderr}`);
+  //console.log(`stdout: ${stdout}`);
+  //console.log(`stderr: ${stderr}`);
   //const time = (new Date()).toTimeString();
   //core.setOutput("time", time);
   // Get the JSON webhook payload for the event that triggered the workflow
