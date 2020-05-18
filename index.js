@@ -18,7 +18,7 @@ try {
   var dirname = path.dirname(workingDirectory);
   fs.statSync(dirname);
   process.chdir(dirname);
-  const { stdout, stderr } = (async () => { await exec(`./gradlew ${shadowjar}`); })()
+  const { stdout, stderr } = (async () => { await exec(`./gradlew ${task}`); })()
   // const { stdout, stderr } = await exec(`./gradlew ${shadowjar}`);  
   console.log(`stdout: ${stdout}`);
   console.log(`stderr: ${stderr}`);
