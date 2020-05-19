@@ -12,16 +12,17 @@ async function gradlewExecute(task) {
     console.log('stderr:', stderr);
   } catch (e) {
     console.error(e); // should contain code (exit code) and signal (that caused the termination).
+    throw e;
   }
 }
 
 try {
   // `task` input defined in action metadata file
-  const task = core.getInput('task');
+  const task = core.getInput('task') || "noting";
   console.log(`task param is ${task}!`);
   
   // `working-directory` input defined in action metadata file
-  const workingDirectory = core.getInput('working-directory');
+  const workingDirectory = core.getInput('working-directory')  || "nothing";
   console.log(`working-directory param is ${workingDirectory}!`);
  
   fs.statSync(workingDirectory);
